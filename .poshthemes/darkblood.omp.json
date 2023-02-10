@@ -1,0 +1,61 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "foreground": "#ffffff",
+          "properties": {
+            "template": "<#CB4B16>\u250f[</>{{ .UserName }}<#CB4B16>]</>"
+          },
+          "style": "plain",
+          "type": "session"
+        },
+        {
+          "foreground": "#ffffff",
+          "properties": {
+            "template": "<#CB4B16>[</>{{ .HEAD }}<#CB4B16>]</>"
+          },
+          "style": "plain",
+          "type": "git"
+        },
+        {
+          "foreground": "#ffffff",
+          "properties": {
+            "template": "<#CB4B16>[</>\uf0e7<#CB4B16>]</>"
+          },
+          "style": "plain",
+          "type": "root"
+        },
+        {
+          "foreground": "#ffffff",
+          "properties": {
+            "template": "<#CB4B16>[x</>{{ .Meaning }}<#CB4B16>]</>"
+          },
+          "style": "plain",
+          "type": "exit"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "#ffffff",
+          "properties": {
+            "style": "full",
+            "template": "<#CB4B16>\u2516[</>{{ .Path }}<#CB4B16>]></>"
+          },
+          "style": "plain",
+          "type": "path"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "final_space": true,
+  "version": 1
+}

@@ -1,0 +1,68 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "background": "#EB9654",
+          "foreground": "#ffffff",
+          "leading_diamond": "\ue0b6",
+          "properties": {
+            "display_host": false,
+            "template": "{{ if .SSHSession }}\uf817 {{ end }}{{ .UserName }} "
+          },
+          "style": "diamond",
+          "type": "session"
+        },
+        {
+          "background": "lightYellow",
+          "foreground": "#3f3f3f",
+          "properties": {
+            "style": "full",
+            "template": " {{ .Path }} "
+          },
+          "style": "plain",
+          "type": "path"
+        },
+        {
+          "background": "#25AFF3",
+          "foreground": "#ffffff",
+          "properties": {
+            "fetch_status": true,
+            "template": " branch ({{ .HEAD }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}) "
+          },
+          "style": "plain",
+          "type": "git"
+        },
+        {
+          "background": "#1BD760",
+          "foreground": "#ffffff",
+          "properties": {
+            "paused_icon": "",
+            "playing_icon": "",
+            "stopped_icon": "",
+            "template": " {{ .Icon }}{{ if ne .Status \"stopped\" }}{{ .Artist }} - {{ .Track }}{{ end }} ",
+            "track_separator": " - "
+          },
+          "style": "plain",
+          "type": "spotify"
+        },
+        {
+          "background": "#cc00ff",
+          "foreground": "#ffffff",
+          "properties": {
+            "template": " {{ .CurrentDate | date .Format }} ",
+            "time_format": "15:04:05"
+          },
+          "style": "diamond",
+          "trailing_diamond": "\ue0b0",
+          "type": "time"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "final_space": true,
+  "version": 1
+}

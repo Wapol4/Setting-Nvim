@@ -1,0 +1,99 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "foreground": "white",
+          "properties": {
+            "fetch_version": false,
+            "template": "({{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }})"
+          },
+          "style": "plain",
+          "type": "python"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "lightBlue",
+          "properties": {
+            "template": "# "
+          },
+          "style": "plain",
+          "type": "text"
+        },
+        {
+          "foreground": "red",
+          "properties": {
+            "template": " % "
+          },
+          "style": "plain",
+          "type": "root"
+        },
+        {
+          "properties": {
+            "template": "<cyan>{{ .UserName }}</> <darkGray>@</> <green>{{ .HostName }}</> "
+          },
+          "style": "plain",
+          "type": "session"
+        },
+        {
+          "foreground": "lightYellow",
+          "properties": {
+            "style": "full",
+            "template": "<darkGray>in </>{{ .Path }} "
+          },
+          "style": "plain",
+          "type": "path"
+        },
+        {
+          "properties": {
+            "template": "<darkGray>on</> <white>git:</>{{ .HEAD }} "
+          },
+          "style": "plain",
+          "type": "git"
+        },
+        {
+          "foreground": "darkGray",
+          "properties": {
+            "template": "[{{ .CurrentDate | date .Format }}]"
+          },
+          "style": "plain",
+          "type": "time"
+        },
+        {
+          "foreground": "red",
+          "properties": {
+            "template": " C:{{ if gt .Code 0 }}{{ .Code }}{{ end }} "
+          },
+          "style": "plain",
+          "type": "exit"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "lightRed",
+          "properties": {
+            "template": "$"
+          },
+          "style": "plain",
+          "type": "text"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "final_space": true,
+  "version": 1
+}

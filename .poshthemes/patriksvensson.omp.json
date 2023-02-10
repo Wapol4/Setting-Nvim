@@ -1,0 +1,85 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "red",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "template": "\uf0e7 "
+          },
+          "style": "plain",
+          "type": "root"
+        },
+        {
+          "foreground": "blue",
+          "properties": {
+            "folder_icon": "\ue5ff",
+            "folder_separator_icon": "/",
+            "home_icon": "\uf7db",
+            "style": "agnoster",
+            "template": "{{ .Path }}"
+          },
+          "style": "plain",
+          "type": "path"
+        },
+        {
+          "foreground": "green",
+          "foreground_templates": [
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}yellow{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}red{{ end }}",
+            "{{ if gt .Ahead 0 }}red{{ end }}",
+            "{{ if gt .Behind 0 }}green{{ end }}"
+          ],
+          "properties": {
+            "fetch_stash_count": true,
+            "fetch_status": true,
+            "fetch_upstream_icon": true,
+            "github_icon": "\uf408 ",
+            "template": " on {{ .UpstreamIcon }}{{ .HEAD }}{{ .BranchStatus }}{{ if .Working.Changed }}<red> \uf044 {{ .Working.String }}</>{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}<yellow> \uf046 {{ .Staging.String }}</>{{ end }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }}"
+          },
+          "style": "plain",
+          "type": "git"
+        },
+        {
+          "foreground": "magenta",
+          "properties": {
+            "template": " [.NET] {{ if .Unsupported }}\uf071{{ else }}{{ .Full }}{{ end }} "
+          },
+          "style": "plain",
+          "type": "dotnet"
+        }
+      ],
+      "type": "prompt"
+    },
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "foreground": "yellow",
+          "properties": {
+            "template": "{{ .CurrentDate | date .Format }} ",
+            "time_format": "15:04:05"
+          },
+          "style": "plain",
+          "type": "time"
+        },
+        {
+          "foreground": "green",
+          "properties": {
+            "template": "\u276f"
+          },
+          "style": "plain",
+          "type": "text"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "final_space": true,
+  "version": 1
+}
