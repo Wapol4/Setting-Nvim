@@ -1,0 +1,69 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "foreground": "#CB4B16",
+          "properties": {
+            "template": " {{ .Meaning }} "
+          },
+          "style": "plain",
+          "type": "exit"
+        },
+        {
+          "foreground": "#CECE04",
+          "properties": {
+            "template": " \uf0e7 "
+          },
+          "style": "plain",
+          "type": "root"
+        },
+        {
+          "foreground": "#FFFFFF",
+          "properties": {
+            "template": "{{ .UserName }}@{{ .HostName }} "
+          },
+          "style": "plain",
+          "type": "session"
+        },
+        {
+          "foreground": "#0973C0",
+          "properties": {
+            "style": "full",
+            "template": "{{ .Path }} "
+          },
+          "style": "plain",
+          "type": "path"
+        },
+        {
+          "foreground": "#C1C106",
+          "properties": {
+            "template": "<#ffffff>git:</>{{ .HEAD }} "
+          },
+          "style": "plain",
+          "type": "git"
+        },
+        {
+          "foreground": "#100e23",
+          "properties": {
+            "template": " \ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} "
+          },
+          "style": "plain",
+          "type": "python"
+        },
+        {
+          "foreground": "#ffffff",
+          "properties": {
+            "template": "<#CB4B16>\u276f</><#CACA02>\u276f</><#4E9A06>\u276f</> "
+          },
+          "style": "plain",
+          "type": "text"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "version": 1
+}

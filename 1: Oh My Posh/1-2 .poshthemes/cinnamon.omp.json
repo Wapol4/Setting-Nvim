@@ -1,0 +1,71 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "alignment": "left",
+      "segments": [
+        {
+          "background": "#07585c",
+          "foreground": "#ffffff",
+          "leading_diamond": "\ue0b6",
+          "properties": {
+            "template": " {{ .UserName }}@{{ .HostName }} "
+          },
+          "style": "diamond",
+          "type": "session"
+        },
+        {
+          "background": "#3e9022",
+          "foreground": "#ffffff",
+          "properties": {
+            "style": "folder",
+            "template": " \ue5ff {{ .Path }} "
+          },
+          "style": "plain",
+          "type": "path"
+        },
+        {
+          "background": "#de076f",
+          "foreground": "#ffffff",
+          "properties": {
+            "branch_icon": "",
+            "fetch_upstream_icon": true,
+            "template": " {{ .UpstreamIcon }}{{ .HEAD }} "
+          },
+          "style": "plain",
+          "type": "git"
+        },
+        {
+          "background": "#491545",
+          "foreground": "#ffffff",
+          "properties": {
+            "paused_icon": "\uf8e3 ",
+            "playing_icon": "\ue602 ",
+            "stopped_icon": "\uf04d ",
+            "template": " \uf9c6 {{ .Icon }}{{ if ne .Status \"stopped\" }}{{ .Artist }} - {{ .Track }}{{ end }} ",
+            "track_separator": " - "
+          },
+          "style": "plain",
+          "type": "spotify"
+        },
+        {
+          "background": "#491515",
+          "background_templates": [
+            "{{ if gt .Code 0 }}#f1184c{{ end }}"
+          ],
+          "foreground": "#ffffff",
+          "properties": {
+            "always_enabled": true,
+            "template": " \uf7d4 "
+          },
+          "style": "diamond",
+          "trailing_diamond": "\ue0b4",
+          "type": "exit"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "final_space": true,
+  "version": 1
+}
